@@ -1,15 +1,19 @@
 {
   "compilerOptions": {
+    "outDir": "dist",
+    "importHelpers": true,
+    "moduleResolution": "node",
     "target": "es5",
     "module": "esnext",
-    "moduleResolution": "node",
-    "jsx": "react",
-    "noEmitOnError": true,
-    "noUnusedLocals": true,
-    "removeComments": true,
+    "sourceMap": true,
     "noImplicitAny": true,
     "esModuleInterop": true,
-    "baseUrl": "./",
+    "strict": true,
+    "jsx": "preserve",
+    "noUnusedLocals": true,
+    "removeComments": true,
+    "baseUrl": ".",
+    "rootDirs": ["src"],
     "paths": { // path for abs imports
       "App": ["src/App"],
       "styles.css": ["src/styles.css"],
@@ -19,6 +23,7 @@
     }
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "dist",
   ]
 }
