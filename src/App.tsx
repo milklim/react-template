@@ -1,8 +1,13 @@
+import GlobalStyles from 'styles';
 import React from 'react';
-import 'styles.css';
 
 const App: React.FC = () => {
-  return <div>Boohoo!!!!</div>;
+  return (
+    <>
+      <GlobalStyles />
+      <div>Boohoo!!!!</div>
+    </>
+  );
 };
 
 export default App;
