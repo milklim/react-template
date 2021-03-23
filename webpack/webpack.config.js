@@ -45,11 +45,11 @@ const baseConfig = {
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".jsx"],
         alias: { // aliased like in tsconfig.json
-            'App': path.resolve(rootDir, 'src/App'),
-            'styles': path.resolve(rootDir, 'src/styles.ts'),
             '@components': path.resolve(rootDir, 'src/components/'),
             '@features': path.resolve(rootDir, 'src/features/'),
             '@pages': path.resolve(rootDir, 'src/pages/'),
+            '@api': path.resolve(rootDir, 'src/api/'),
+            '@': path.resolve(rootDir, 'src/'),
         },
     },
 };

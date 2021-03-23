@@ -15,15 +15,16 @@
     "baseUrl": ".",
     "rootDirs": ["src"],
     "paths": { // path for abs imports
-      "App": ["src/App"],
-      "styles": ["src/styles.ts"],
-      "@components": ["src/components/*"],
+      "@components/*": ["src/components/*"],
       "@features/*": ["src/features/*"],
-      "@pages/*": ["src/pages/*"]
+      "@pages/*": ["src/pages/*"],
+      "@api/*": ["src/api/*"],
+      "@api": ["src/api/index.ts"],
+      "@/*": ["src/*"]
     }
   },
   "exclude": [
     "node_modules",
-    "dist",
+    "dist"
   ]
 }
