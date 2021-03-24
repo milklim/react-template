@@ -47,6 +47,7 @@ const baseConfig = {
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".jsx"],
         alias: { // aliased like in tsconfig.json
+            '@typings': path.resolve(rootDir, 'src/typings/'),
             '@components': path.resolve(rootDir, 'src/components/'),
             '@features': path.resolve(rootDir, 'src/features/'),
             '@pages': path.resolve(rootDir, 'src/pages/'),
