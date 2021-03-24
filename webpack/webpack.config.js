@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { HotModuleReplacementPlugin } = require("webpack");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
+const Dotenv = require('dotenv-webpack');
 
 const rootDir = path.resolve(__dirname, '../');
 const baseConfig = {
@@ -41,6 +42,7 @@ const baseConfig = {
             template: path.resolve(rootDir, "public/index.html"),
         }),
         new MiniCssExtractPlugin(),
+        new Dotenv(),
     ],
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".jsx"],
