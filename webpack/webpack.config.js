@@ -34,6 +34,11 @@ const baseConfig = {
                 test: /\.(png|jpg|svg)$/i,
                 loader: "file-loader",
             },
+            {
+                test: /\.js$/,
+                enforce: "pre",
+                use: ["source-map-loader"],
+            },
         ],
     },
     plugins: [
