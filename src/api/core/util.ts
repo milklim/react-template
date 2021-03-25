@@ -1,15 +1,15 @@
 import { AxiosError, AxiosResponse } from 'axios';
 import { IApiResponse } from '@api/types';
 
-export const handleResponse = (response: AxiosResponse): IApiResponse => {
+export function handleResponse<T>(response: AxiosResponse): IApiResponse<T> {
   return {
-    data: response.data,
+    data: response.data as T,
     error: null,
   };
-};
+}
 
 const ERR_MSG_DEFAULT = 'Bad response from server';
-export const handleError = (axiosErr: AxiosError): IApiResponse => {
+export function handleError<T>(axiosErr: AxiosError): IApiResponse<T> {
   const { message, response } = axiosErr;
 
   return {
@@ -19,4 +19,4 @@ export const handleError = (axiosErr: AxiosError): IApiResponse => {
       message: message || ERR_MSG_DEFAULT,
     },
   };
-};
+}

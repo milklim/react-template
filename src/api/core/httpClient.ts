@@ -1,4 +1,4 @@
-import axios, { AxiosInstance, AxiosRequestConfig, ResponseType } from 'axios';
+import axios, { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse, ResponseType } from 'axios';
 import { handleError, handleResponse } from '@api/core/util';
 import { TApiClientPromise } from '@api/types';
 
@@ -13,8 +13,8 @@ class HttpClient {
     });
   }
 
-  get(requestUrl: string, params = {}, responseType: ResponseType = 'json'): TApiClientPromise {
-    return this.request({
+  get<T>(requestUrl: string, params = {}, responseType: ResponseType = 'json'): TApiClientPromise<T> {
+    return this.request<T>({
       url: requestUrl,
       method: 'get',
       params,
@@ -22,8 +22,43 @@ class HttpClient {
     });
   }
 
-  request(config: AxiosRequestConfig): TApiClientPromise {
-    return this.instance.request(config).then(handleResponse).catch(handleError);
+  put<T>(requestUrl: string, payload: T): TApiClientPromise<T> {
+    return this.request<T>({
+      url: requestUrl,
+      method: 'put',
+      data: payload,
+    });
+  }
+
+  patch<T>(requestUrl: string, payload: Partial<T>): TApiClientPromise<T> {
+    return this.request<T>({
+      url: requestUrl,
+      method: 'patch',
+      data: payload,
+    });
+  }
+
+  post<T>(requestUrl: string, payload: Partial<T>): TApiClientPromise<T> {
+    return this.request<T>({
+      url: requestUrl,
+      method: 'post',
+      data: payload,
+    });
+  }
+
+  delete(requestUrl: string, params = {}): TApiClientPromise {
+    return this.request({
+      url: requestUrl,
+      method: 'delete',
+      params,
+    });
+  }
+
+  request<T>(config: AxiosRequestConfig): TApiClientPromise<T> {
+    return this.instance
+      .request(config)
+      .then((response: AxiosResponse) => handleResponse<T>(response))
+      .catch((axiosErr: AxiosError) => handleError(axiosErr));
   }
 }
 

@@ -5,8 +5,8 @@ export interface IApi {
   posts: Posts;
 }
 
-export interface IApiResponse {
-  data: unknown;
+export interface IApiResponse<T> {
+  data: Nullable<T>;
   error: Nullable<TApiError>;
 }
 
@@ -15,4 +15,4 @@ type TApiError = {
   message: string;
 };
 
-export type TApiClientPromise = Promise<IApiResponse>;
+export type TApiClientPromise<T = never> = Promise<IApiResponse<T>>;
