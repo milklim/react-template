@@ -1,6 +1,6 @@
-import axios, { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse, ResponseType } from 'axios';
 import { handleError, handleResponse } from '@api/core/util';
 import { TApiClientPromise } from '@api/types';
+import axios, { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse, ResponseType } from 'axios';
 
 class HttpClient {
   private readonly instance: AxiosInstance;

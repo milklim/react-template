@@ -1,7 +1,8 @@
-import GlobalStyles from '@/styles';
-import React, { useEffect, useState } from 'react';
 import api from '@api';
 import { TPost } from '@typings/models';
+import React, { useEffect, useState } from 'react';
+
+import GlobalStyles from '@/styles';
 
 const App: React.FC = () => {
   const [posts, setPosts] = useState<TPost[]>([]);
