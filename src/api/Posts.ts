@@ -1,6 +1,6 @@
-import Base from '@api/core/Base';
-import { TApiClientPromise } from '@api/types';
-import { TPost } from '@typings/models';
+import Base from '@/api/core/Base';
+import { TApiClientPromise } from '@/api/types';
+import { TPost } from '@/typings/models';
 
 class Posts extends Base {
   private readonly entity = 'posts';

@@ -1,5 +1,5 @@
-import Posts from '@api/Posts';
-import { Nullable } from '@typings/common';
+import Posts from '@/api/Posts';
+import { Nullable } from '@/typings/common';
 
 export interface IApi {
   posts: Posts;

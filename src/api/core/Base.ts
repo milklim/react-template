@@ -1,4 +1,4 @@
-import httpClient from '@api/core/httpClient';
+import httpClient from '@/api/core/httpClient';
 
 class Base {
   public readonly http: httpClient;

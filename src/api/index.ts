@@ -1,6 +1,6 @@
-import HttpClient from '@api/core/httpClient';
-import Posts from '@api/Posts';
-import { IApi } from '@api/types';
+import HttpClient from '@/api/core/httpClient';
+import Posts from '@/api/Posts';
+import { IApi } from '@/api/types';
 
 const baseURL = process.env.BASE_URL || 'https://jsonplaceholder.typicode.com/';
 

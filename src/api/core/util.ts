@@ -1,5 +1,6 @@
-import { IApiResponse } from '@api/types';
 import { AxiosError, AxiosResponse } from 'axios';
+
+import { IApiResponse } from '@/api/types';
 
 export function handleResponse<T>(response: AxiosResponse): IApiResponse<T> {
   return {
