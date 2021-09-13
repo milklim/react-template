@@ -1,7 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const { HotModuleReplacementPlugin } = require("webpack");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const Dotenv = require('dotenv-webpack');
@@ -61,11 +60,10 @@ module.exports = ({ analyze = false }, { mode = 'production' }) => {
     const isDev = mode === 'development';
     const isProd = mode === 'production';
     if (isDev) {
-        baseConfig.plugins.push(new HotModuleReplacementPlugin());
         baseConfig.devServer = {
             hot: true,
             compress: true,
-            port: 8000,
+            port: 'auto',
             historyApiFallback: true,
             open: true,
         };
